@@ -1,0 +1,13 @@
+## Half Adder - Boolean Board
+
+## Input A - Switch 0
+set_property -dict {PACKAGE_PIN V2 IOSTANDARD LVCMOS33} [get_ports A]
+
+## Input B - Switch 1
+set_property -dict {PACKAGE_PIN U2 IOSTANDARD LVCMOS33} [get_ports B]
+
+## Output Sum - LED 0
+set_property -dict {PACKAGE_PIN G1 IOSTANDARD LVCMOS33} [get_ports Y]
+
+## Output Carry - LED 1
+set_property -dict {PACKAGE_PIN G2 IOSTANDARD LVCMOS33} [get_ports C]
