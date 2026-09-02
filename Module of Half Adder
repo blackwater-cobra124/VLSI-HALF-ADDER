@@ -1,0 +1,46 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 02.09.2026 13:48:06
+// Design Name: 
+// Module Name: HalfAdder
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+module half_adder (
+    input  A,
+    input  B,
+    output Y,
+    output C
+);
+
+    wire A_not;
+    wire B_not;
+    wire term1;
+    wire term2;
+
+    // NOT gates
+    not (A_not, A);
+    not (B_not, B);
+
+    // AND gates for XOR implementation
+    and (term1, A, B_not);
+    and (term2, A_not, B);
+
+    // OR gate for Sum
+    or  (Y, term1, term2);
+
+    // AND gate for Carry
+    and (C, A, B);
